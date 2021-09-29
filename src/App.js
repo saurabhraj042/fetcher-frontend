@@ -1,25 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import { Container } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header'
+import Body from './components/Body';
+import Welcome from './components/Welcome';
+import "./index.css"
+import Footer from './components/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+	constructor(){
+		super()
+		this.state = {
+			loading : true,
+			data : []
+		}
+		this.apiCall = this.apiCall.bind(this)
+	}
+	
+	async apiCall(){
+		const url = "https://evening-springs-70151.herokuapp.com/"
+		const resp = await fetch(url)
+		const data = await resp.json()
+		console.log(data)
+		this.setState({
+			loading : false,
+			data : data
+		})
+	}
+	
+	componentDidMount(){
+		console.log("Mounted!")
+	}
+
+	componentDidUpdate(){
+		console.log("Updated!")
+	}
+
+	render(){
+		return (
+			<Container fluid>
+				<div class="bg"></div>
+				<div class="bg bg2"></div>
+				<div class="bg bg3"></div>
+				{!this.state.loading && <Header apiCall={this.apiCall} loading={this.state.loading}/>}
+				<div>{this.state.loading && <Welcome />}</div>
+				{this.state.loading && <Header apiCall={this.apiCall} loading={this.state.loading}/>}
+				<Body data={this.state.data}/>
+				<Footer />
+			</Container>
+		)
+	}
 }
-
-export default App;
+export default App
