@@ -4,7 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header'
 import Body from './components/Body';
 import Welcome from './components/Welcome';
-import "./index.css"
 import Footer from './components/Footer';
 
 class App extends Component {
@@ -28,14 +27,6 @@ class App extends Component {
 		})
 	}
 	
-	componentDidMount(){
-		console.log("Mounted!")
-	}
-
-	componentDidUpdate(){
-		console.log("Updated!")
-	}
-
 	render(){
 		return (
 			<Container fluid>

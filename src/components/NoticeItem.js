@@ -1,8 +1,6 @@
 import React from "react"
 import { ListGroupItem } from "react-bootstrap"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../index.css"
-
 
 function NoticeItem(props){
     return (

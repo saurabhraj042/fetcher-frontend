@@ -1,6 +1,5 @@
 import React from "react";
 import { Row, Col, Button } from "react-bootstrap";
-import '../index.css'
 
 function Header(props) {
     const btnText = (props.loading) ? "Run !" : "Run fetcher() Again !"
