@@ -1,5 +1,4 @@
 import React from "react"
-import "../index.css"
 import { GoMarkGithub} from "react-icons/go";
 import { FaLinkedin } from "react-icons/fa";
 
@@ -8,10 +7,10 @@ function Footer(){
         <div class="footer-basic centered">
             <footer>
                 <div class="social">
-                    <a href="https://github.com/saurabhraj042">
+                    <a href="https://github.com/saurabhraj042/fetcher-frontend">
                         <i> <GoMarkGithub /> </i>
                     </a>
-                    <a href="https://www.linkedin.com/feed/">
+                    <a href="https://www.linkedin.com/in/saurabh-r-07709b100/">
                         <i> <FaLinkedin /> </i>
                     </a>
                 </div>

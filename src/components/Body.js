@@ -1,5 +1,4 @@
 import React from "react"
-import "../index.css"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, ListGroup } from "react-bootstrap";
 import NoticeItem from "./NoticeItem";

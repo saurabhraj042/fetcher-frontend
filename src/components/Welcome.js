@@ -1,6 +1,5 @@
 import React from "react"
 import 'bootstrap/dist/css/bootstrap.min.css';
-import "../index.css"
 import centerPNG from "../func.png"
 
 
@@ -11,5 +10,4 @@ function Welcome(){
         </div>
     )
 }
-// 
 export default Welcome
